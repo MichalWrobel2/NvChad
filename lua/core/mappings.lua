@@ -55,7 +55,7 @@ M.general = {
   },
 
   t = {
-    ["<C-x>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
+    ["<C-w>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
   },
 
   v = {
@@ -108,16 +108,16 @@ M.comment = {
 
   -- toggle comment in both modes
   n = {
-    ["<leader>/"] = {
+    ["<C-_>"] = {
       function()
-        require("Comment.api").toggle.linewise.current()
+        require("Comment.api").toggle.blockwise.current()
       end,
       "Toggle comment",
     },
   },
 
   v = {
-    ["<leader>/"] = {
+    ["<C-_>"] = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "Toggle comment",
     },
@@ -144,7 +144,7 @@ M.lspconfig = {
       "LSP definition",
     },
 
-    ["K"] = {
+    ["<leader>h"] = {
       function()
         vim.lsp.buf.hover()
       end,
@@ -343,7 +343,7 @@ M.nvterm = {
     },
 
     -- new
-    ["<leader>h"] = {
+    ["<leader>tt"] = {
       function()
         require("nvterm.terminal").new "horizontal"
       end,
