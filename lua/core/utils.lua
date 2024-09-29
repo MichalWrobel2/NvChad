@@ -88,12 +88,12 @@ M.load_mappings = function(section, mapping_opt)
 end
 
 M.lazy_load = function(plugin)
-  vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = buffer,
-      callback = function()
-          vim.lsp.buf.format { async = false }
-      end
-  })
+  -- vim.api.nvim_create_autocmd("BufWritePre", {
+  --     buffer = buffer,
+  --     callback = function()
+  --         vim.lsp.buf.format { async = false }
+  --     end
+  -- })
   vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
     group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),
     callback = function()

@@ -44,3 +44,4 @@ vim.api.nvim_set_keymap('n', '<S-Down>', ':m+<CR>', { noremap = true, silent = t
 vim.api.nvim_set_keymap('i', '<S-Up>', '<Esc>:m-2<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<S-Down>', '<Esc>:m+<CR>', { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('i', '<C-p>', 'copilot#Accept("<CR>")', { expr = true, silent = true, script = true })
